@@ -17,24 +17,36 @@
 
 #define ON       1
 #define OFF      0
-/**
- * 
- * @param pinNum pin number
- * @param state (IN , OUT) options
- * @return void
- */
-void setPINC_DIR(int pinNum, int state) ;
+
+void setPORTA_DIR_VAL(int val, int state);
+void setPORTB_DIR_VAL(int val, int state);
 void setPORTC_DIR_VAL(int val, int state);
-/**
- * 
- * @param pinNum
- * @param state
- * @return 
- */
+void setPORTD_DIR_VAL(int val, int state);
+
 void setPINA_DIR(int pinNum, int state);
+void setPINB_DIR(int pinNum, int state);
+void setPINC_DIR(int pinNum, int state);
 void setPIND_DIR(int pinNum, int state);
 
+void setPINA(int pinNUM, int status);
+void setPINB(int pinNUM, int status);
 void setPINC(int pinNUM, int status);
 void setPIND(int pinNUM, int status);
+
+void setPORTA_VAL(int val);
+void setPORTB_VAL(int val);
+void setPORTC_VAL(int val);
+void setPORTD_VAL(int val);
+
+char readPORTA();
+char readPORTB();
+char readPORTC();
+char readPORTD();
+
+char readPINA(int pinNUM);
+char readPINB(int pinNUM);
+char readPINC(int pinNUM);
+char readPIND(int pinNUM);
+
 #endif	/* DIO_H */
 

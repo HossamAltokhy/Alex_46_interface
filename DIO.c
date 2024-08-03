@@ -54,46 +54,6 @@ void setPIND_DIR(int pinNum, int state) {
 }
 
 
-void setPINA(int pinNUM, int status){
-    switch(status){
-        case HIGH:
-            PORTA |= (1<<pinNUM);
-            break;
-        case LOW:
-            PORTA &= ~(1<<pinNUM);
-            break;
-    }
-}
-void setPINB(int pinNUM, int status){
-    switch(status){
-        case HIGH:
-            PORTB |= (1<<pinNUM);
-            break;
-        case LOW:
-            PORTB &= ~(1<<pinNUM);
-            break;
-    }
-}
-void setPINC(int pinNUM, int status){
-    switch(status){
-        case HIGH:
-            PORTC |= (1<<pinNUM);
-            break;
-        case LOW:
-            PORTC &= ~(1<<pinNUM);
-            break;
-    }
-}
-void setPIND(int pinNUM, int status){
-    switch(status){
-        case HIGH:
-            PORTD |= (1<<pinNUM);
-            break;
-        case LOW:
-            PORTD &= ~(1<<pinNUM);
-            break;
-    }
-}
 
 void setPORTA_DIR_VAL(int val, int state){
     switch(state){
@@ -142,4 +102,87 @@ void setPORTD_DIR_VAL(int val, int state){
         default:
             break;
     }
+}
+
+
+void setPINA(int pinNUM, int status){
+    switch(status){
+        case HIGH:
+            PORTA |= (1<<pinNUM);
+            break;
+        case LOW:
+            PORTA &= ~(1<<pinNUM);
+            break;
+    }
+}
+void setPINB(int pinNUM, int status){
+    switch(status){
+        case HIGH:
+            PORTB |= (1<<pinNUM);
+            break;
+        case LOW:
+            PORTB &= ~(1<<pinNUM);
+            break;
+    }
+}
+void setPINC(int pinNUM, int status){
+    switch(status){
+        case HIGH:
+            PORTC |= (1<<pinNUM);
+            break;
+        case LOW:
+            PORTC &= ~(1<<pinNUM);
+            break;
+    }
+}
+void setPIND(int pinNUM, int status){
+    switch(status){
+        case HIGH:
+            PORTD |= (1<<pinNUM);
+            break;
+        case LOW:
+            PORTD &= ~(1<<pinNUM);
+            break;
+    }
+}
+
+
+void setPORTA_VAL(int val){
+    PORTA =  val;
+}
+void setPORTB_VAL(int val){
+    PORTB =  val;
+}
+void setPORTC_VAL(int val){
+    PORTC =  val;
+}
+void setPORTD_VAL(int val){
+    PORTD =  val;
+}
+
+
+char readPORTA(){
+    return PINA;
+}
+char readPORTB(){
+    return PINB;
+}
+char readPORTC(){
+    return PINC;
+}
+char readPORTD(){
+    return PIND;
+}
+
+char readPINA(int pinNUM){
+    return (PINA&(1<<pinNUM));
+}
+char readPINB(int pinNUM){
+    return (PINB&(1<<pinNUM));
+}
+char readPINC(int pinNUM){
+    return (PINC&(1<<pinNUM));
+}
+char readPINd(int pinNUM){
+    return (PIND&(1<<pinNUM));
 }

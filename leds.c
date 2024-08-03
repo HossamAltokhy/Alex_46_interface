@@ -7,7 +7,7 @@ void initLEDs(void) {
     //    DDRD |= (1<<PD3);
 //    setPINC_DIR(LED0, OUT);
 //    setPINC_DIR(LED1, OUT);
-    setPORTC_DIR_VAL((1<<LED0)|(1<<LED1));
+    setPORTC_DIR_VAL((1<<LED0)|(1<<LED1), OUT);
     setPIND_DIR(LED2, OUT);
 }
 
