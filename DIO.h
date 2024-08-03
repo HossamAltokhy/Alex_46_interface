@@ -24,7 +24,7 @@
  * @return void
  */
 void setPINC_DIR(int pinNum, int state) ;
-
+void setPORTC_DIR_VAL(int val, int state);
 /**
  * 
  * @param pinNum
