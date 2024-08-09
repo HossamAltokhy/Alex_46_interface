@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>leds.h</itemPath>
       <itemPath>DIO.h</itemPath>
+      <itemPath>buttons.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -17,6 +18,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>leds.c</itemPath>
       <itemPath>DIO.c</itemPath>
+      <itemPath>buttons.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
