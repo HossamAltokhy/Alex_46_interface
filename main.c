@@ -12,6 +12,8 @@
 #include "leds.h"
 #include "DIO.h"
 #include "buttons.h"
+#include "output_devices.h"
+#include "mkeypad.h"
 
 
 
@@ -23,14 +25,14 @@ int main(void) {
 
 
     initLEDs();
-    initBTNs();
+
+    DDRA = 0xFF;
+    init_keypad();
     while (1) {
 
         
-        LED_ON(LED0);
-        _delay_ms(5000);
-        LED_OFF(LED0);
-        _delay_ms(5000);
+       PORTA =  readKey();
+//       _delay_ms(20);
 
     }
 }
