@@ -9,6 +9,8 @@
       <itemPath>buttons.h</itemPath>
       <itemPath>output_devices.h</itemPath>
       <itemPath>mkeypad.h</itemPath>
+      <itemPath>mLCD.h</itemPath>
+      <itemPath>mlcd4.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -23,6 +25,8 @@
       <itemPath>buttons.c</itemPath>
       <itemPath>output_devices.c</itemPath>
       <itemPath>mkeypad.c</itemPath>
+      <itemPath>mLCD.c</itemPath>
+      <itemPath>mlcd4.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

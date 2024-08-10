@@ -8,11 +8,13 @@
 #ifndef MKEYPAD_H
 #define	MKEYPAD_H
 
-#define Keypad_PORT_DIR    DDRD
-#define Keypad_PORT        PORTD
+#define Keypad_PORT_DIR    DDRA
+#define Keypad_PORT        PORTA
 
 void init_keypad();
 char readKey();
+
+char getKey();
 
 #endif	/* MKEYPAD_H */
 

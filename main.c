@@ -7,6 +7,7 @@
 #define F_CPU 16000000UL
 
 #include <avr/io.h>
+
 #include <util/delay.h>
 
 #include "leds.h"
@@ -14,25 +15,28 @@
 #include "buttons.h"
 #include "output_devices.h"
 #include "mkeypad.h"
+#include "mLCD4.h"
 
 
 
 
-
+char message[] = "Hello";
 
 int main(void) {
     /* Replace with your application code */
-
-
-    initLEDs();
-
-    DDRA = 0xFF;
+    
     init_keypad();
+    _delay_ms(5);
+    
+    init_LCD4();
+    _delay_ms(50);
+    
+    LCD4_GOTO(0,4);
     while (1) {
 
+        LCD4_data(getKey());
         
-       PORTA =  readKey();
-//       _delay_ms(20);
-
+        _delay_ms(500);
+        
     }
 }
