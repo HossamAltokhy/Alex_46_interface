@@ -11,6 +11,7 @@
       <itemPath>mkeypad.h</itemPath>
       <itemPath>mLCD.h</itemPath>
       <itemPath>mlcd4.h</itemPath>
+      <itemPath>mINT.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -27,6 +28,7 @@
       <itemPath>mkeypad.c</itemPath>
       <itemPath>mLCD.c</itemPath>
       <itemPath>mlcd4.c</itemPath>
+      <itemPath>mINT.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
