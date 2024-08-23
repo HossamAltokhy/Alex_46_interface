@@ -11,10 +11,15 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h \
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\string.h \
+ c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h \
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdio.h \
+ c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h leds.h \
- DIO.h buttons.h output_devices.h mkeypad.h mLCD4.h mINT.h
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h \
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h leds.h \
+ DIO.h buttons.h output_devices.h mkeypad.h mLCD4.h mINT.h mADC.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h:
 
@@ -40,11 +45,21 @@ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h:
 
+c:\program\ files\microchip\xc8\v2.32\avr\avr\include\string.h:
+
+c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h:
+
+c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdio.h:
+
+c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
+
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h:
+
+c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h:
 
 leds.h:
 
@@ -59,3 +74,5 @@ mkeypad.h:
 mLCD4.h:
 
 mINT.h:
+
+mADC.h:

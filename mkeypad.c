@@ -139,20 +139,20 @@ char getKey() {
 
     Keypad_PORT |= 0x07;
     while (1) {
-        if (readPORTA() & 0xF0) {
+        if (readPORTD() & 0xF0) {
             Keypad_PORT &= 0xF8;
             Keypad_PORT |= (1 << 0);
             _delay_ms(5);
-            if (readPORTA() & 0x10) {
+            if (readPORTD() & 0x10) {
                 _delay_us(500);
                 return '3';
-            } else if (readPORTA() & 0x20) {
+            } else if (readPORTD() & 0x20) {
                 _delay_us(500);
                 return '6';
-            } else if (readPORTA() & 0x40) {
+            } else if (readPORTD() & 0x40) {
                 _delay_us(500);
                 return '9';
-            } else if (readPORTA() & 0x80) {
+            } else if (readPORTD() & 0x80) {
                 _delay_us(500);
                 return '#';
             } else {
@@ -160,16 +160,16 @@ char getKey() {
                 Keypad_PORT &= 0xF8;
                 Keypad_PORT |= (1 << 1);
                 _delay_ms(5);
-                if (readPORTA() & 0x10) {
+                if (readPORTD() & 0x10) {
                     _delay_us(500);
                     return '2';
-                } else if (readPORTA() & 0x20) {
+                } else if (readPORTD() & 0x20) {
                     _delay_us(500);
                     return '5';
-                } else if (readPORTA() & 0x40) {
+                } else if (readPORTD() & 0x40) {
                     _delay_us(500);
                     return '8';
-                } else if (readPORTA() & 0x80) {
+                } else if (readPORTD() & 0x80) {
                     _delay_us(500);
                     return '0';
                 } else {
@@ -177,16 +177,16 @@ char getKey() {
                     Keypad_PORT &= 0xF8;
                     Keypad_PORT |= (1 << 2);
                     _delay_ms(5);
-                    if (readPORTA() & 0x10) {
+                    if (readPORTD() & 0x10) {
                         _delay_us(500);
                         return '1';
-                    } else if (readPORTA() & 0x20) {
+                    } else if (readPORTD() & 0x20) {
                         _delay_us(500);
                         return '4';
-                    } else if (readPORTA() & 0x40) {
+                    } else if (readPORTD() & 0x40) {
                         _delay_us(500);
                         return '7';
-                    } else if (readPORTA() & 0x80) {
+                    } else if (readPORTD() & 0x80) {
                         _delay_us(500);
                         return '*';
                     } else {
