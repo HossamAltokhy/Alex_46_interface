@@ -18,9 +18,9 @@
 #define LCD_CONTROL     PORTB
 #define LCD_CONTROL_DIR DDRB
 
-#define RS       PB1    
-#define RW       PB2
-#define EN       PB3
+#define RS       PB0    
+#define RW       PB1
+#define EN       PB2
 
 // LCD Codes
 #define CLEAR       0x01
