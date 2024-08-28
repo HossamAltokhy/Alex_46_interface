@@ -12,15 +12,15 @@
 
 #include "DIO.h"
 
-#define LCD_DATA_DIR    DDRC
-#define LCD_DATA        PORTC
+#define LCD_DATA_DIR    DDRA
+#define LCD_DATA        PORTA
 
 #define LCD_CONTROL     PORTB
 #define LCD_CONTROL_DIR DDRB
 
-#define RS       PB0    
-#define RW       PB1
-#define EN       PB2
+#define RS       PB1    
+#define RW       PB2
+#define EN       PB3
 
 // LCD Codes
 #define CLEAR       0x01

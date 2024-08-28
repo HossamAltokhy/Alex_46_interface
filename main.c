@@ -22,48 +22,34 @@
 #include "mADC.h"
 #include "mTimer.h"
 
+ISR(TIMER0_OVF_vect){
+    
+}
 
+ISR(ADC_vect){
+    LCD4_CLEAR();
+    LCD4_data_num(ADCW * ADC_STEP);
+    _delay_ms(5000);
+}
 
-
-int main(void) {
-    /* Replace with your application code */
-
-    setPINB_DIR(BTN_DEC, IN);
-    setPINB_DIR(BTN_INC, IN);
+int main() {
 
     init_LCD4();
-
-    Timer0_OC0_init();
-    Timer0_OC0_select_mode(OC0_FPWM_CLEAR);
-    init_Timer0(Timer_mode_FPWM, clockSelect_Clk_io_1024);
-
     _delay_ms(50);
-    LCD4_CLEAR();
-    LCD4_data_num(OCR0 * 100 / 255.0);
-    LCD4_data('%');
-    // sei();
+    LCD4_data('A');
+    init_ADC(CH1, AVCC, ADC_FREQ_DIV128);
+    _delay_ms(50);
+    TCNT0 = 250;
+    init_Timer0(Timer_mode_Normal, clockSelect_EXT_CLK_Rising);
+
+    sei();
+    
+//    ADC_SC();
     while (1) {
 
-
-        if (isPressedB(BTN_INC)) {
-            OCR0 += 1;
-            _delay_ms(200);
-            LCD4_CLEAR();
-            LCD4_data_num(OCR0 * 100 / 255.0);
-            LCD4_data('%');
-        }
-        if (isPressedB(BTN_DEC)) {
-            OCR0 -= 1;
-            _delay_ms(200);
-            LCD4_CLEAR();
-            LCD4_data_num(OCR0 * 100 / 255.0);
-            LCD4_data('%');
-        }
-
-
-
-
-
+        
+        LCD4_CLEAR();
+        LCD4_data_num(TCNT0);
 
     }
 }

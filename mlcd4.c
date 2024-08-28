@@ -9,7 +9,7 @@
 
 void init_LCD4() {
     //DIO
-    setPORTC_DIR_VAL(0xF0, OUT);
+    setPORTA_DIR_VAL(0xF0, OUT);
     setPINB_DIR(RS,OUT);
     setPINB_DIR(RW,OUT);
     setPINB_DIR(EN,OUT);

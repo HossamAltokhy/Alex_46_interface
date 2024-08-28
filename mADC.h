@@ -30,6 +30,8 @@
 
 #define ADC_FREQ_DIV128       7
 
+#define mode_ATE_TIMER0_OVF   4
+
 void init_ADC(char CH, char REF, char FREQ);
 void ADC_select_CH(char CH);
 void ADC_select_REF(char REF);
@@ -37,7 +39,7 @@ void ADC_select_FREQ(char FREQ);
 void ADC_SC();
 void ADC_EN();
 void ADC_INT_EN();
-//ADC_AUTO_TRIGGERING(char mode);
-
+void ADC_AUTO_TRIGGERING(char mode);
+void ADC_ATE_EN();
 #endif	/* MADC_H */
 
