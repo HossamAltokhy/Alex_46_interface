@@ -21,35 +21,61 @@
 #include "mINT.h"
 #include "mADC.h"
 #include "mTimer.h"
+#include "mUART.h"
 
-ISR(TIMER0_OVF_vect){
+#define SPI_MASTER     1
+#define SPI_SLAVE      0
+
+#define SPI_CLOCK_4    0
+#define SPI_CLOCK_16   1
+#define SPI_CLOCK_64   2
+#define SPI_CLOCK_128  3
+
+#define MOSI    PB5
+#define MISO    PB6
+#define SCK     PB7
+#define SS      PB4
+
+
+
+void init_SPI(int mode, int SPI_clock);
+void SPI_send(char data);
+char SPI_receive();
+char x = 0x01;
+int main(void) {
+    /* Replace with your application code */
+   
+    init_SPI(SPI_MASTER, SPI_CLOCK_128);
     
-}
 
-ISR(ADC_vect){
-    LCD4_CLEAR();
-    LCD4_data_num(ADCW * ADC_STEP);
-    _delay_ms(5000);
-}
-
-int main() {
-
-    init_LCD4();
-    _delay_ms(50);
-    LCD4_data('A');
-    init_ADC(CH1, AVCC, ADC_FREQ_DIV128);
-    _delay_ms(50);
-    TCNT0 = 250;
-    init_Timer0(Timer_mode_Normal, clockSelect_EXT_CLK_Rising);
-
-    sei();
     
-//    ADC_SC();
     while (1) {
-
-        
-        LCD4_CLEAR();
-        LCD4_data_num(TCNT0);
-
+        SPI_send(x++);
+        _delay_ms(1000);
     }
+}
+
+
+void init_SPI(int mode, int SPI_clock){
+    SPCR |= (mode<<MSTR);
+    
+    if(mode){
+        setPORTB_DIR_VAL((1<<MOSI)|(1<<SCK)|(1<<SS), OUT);
+    }
+    else{
+        setPORTB_DIR_VAL((1<<MISO), OUT);
+    }
+    SPCR |= SPI_clock;
+    
+    SPCR |= (1<<SPE);
+}
+
+void SPI_send(char data){
+    SPDR = data;
+    while(!(SPSR & (1<<SPIF)));
+}
+
+char SPI_receive(){
+    while(!(SPSR & (1<<SPIF)));
+    return SPDR;
 }

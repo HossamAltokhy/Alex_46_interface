@@ -8,10 +8,12 @@
 #ifndef MUART_H
 #define	MUART_H
 
+
 #define UART_BAUD_9600  9600
 
 void init_UART(int BaudRate);
 void UART_send(char data);
 char UART_receive();
+
 #endif	/* MUART_H */
 
