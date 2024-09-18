@@ -15,6 +15,7 @@
       <itemPath>mADC.h</itemPath>
       <itemPath>mTimer.h</itemPath>
       <itemPath>mUART.h</itemPath>
+      <itemPath>mSPI.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -35,6 +36,7 @@
       <itemPath>mADC.c</itemPath>
       <itemPath>mTimer.c</itemPath>
       <itemPath>mUART.c</itemPath>
+      <itemPath>mSPI.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

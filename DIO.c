@@ -183,6 +183,6 @@ char readPINB(int pinNUM){
 char readPINC(int pinNUM){
     return (PINC&(1<<pinNUM));
 }
-char readPINd(int pinNUM){
+char readPIND(int pinNUM){
     return (PIND&(1<<pinNUM));
 }

@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c leds.c DIO.c buttons.c output_devices.c mkeypad.c mLCD.c mlcd4.c mINT.c mADC.c mTimer.c mUART.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c leds.c DIO.c buttons.c output_devices.c mkeypad.c mLCD.c mlcd4.c mINT.c mADC.c mTimer.c mUART.c mSPI.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/output_devices.o ${OBJECTDIR}/mkeypad.o ${OBJECTDIR}/mLCD.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/mINT.o ${OBJECTDIR}/mADC.o ${OBJECTDIR}/mTimer.o ${OBJECTDIR}/mUART.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/leds.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/output_devices.o.d ${OBJECTDIR}/mkeypad.o.d ${OBJECTDIR}/mLCD.o.d ${OBJECTDIR}/mlcd4.o.d ${OBJECTDIR}/mINT.o.d ${OBJECTDIR}/mADC.o.d ${OBJECTDIR}/mTimer.o.d ${OBJECTDIR}/mUART.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/output_devices.o ${OBJECTDIR}/mkeypad.o ${OBJECTDIR}/mLCD.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/mINT.o ${OBJECTDIR}/mADC.o ${OBJECTDIR}/mTimer.o ${OBJECTDIR}/mUART.o ${OBJECTDIR}/mSPI.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/leds.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/output_devices.o.d ${OBJECTDIR}/mkeypad.o.d ${OBJECTDIR}/mLCD.o.d ${OBJECTDIR}/mlcd4.o.d ${OBJECTDIR}/mINT.o.d ${OBJECTDIR}/mADC.o.d ${OBJECTDIR}/mTimer.o.d ${OBJECTDIR}/mUART.o.d ${OBJECTDIR}/mSPI.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/output_devices.o ${OBJECTDIR}/mkeypad.o ${OBJECTDIR}/mLCD.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/mINT.o ${OBJECTDIR}/mADC.o ${OBJECTDIR}/mTimer.o ${OBJECTDIR}/mUART.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/output_devices.o ${OBJECTDIR}/mkeypad.o ${OBJECTDIR}/mLCD.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/mINT.o ${OBJECTDIR}/mADC.o ${OBJECTDIR}/mTimer.o ${OBJECTDIR}/mUART.o ${OBJECTDIR}/mSPI.o
 
 # Source Files
-SOURCEFILES=main.c leds.c DIO.c buttons.c output_devices.c mkeypad.c mLCD.c mlcd4.c mINT.c mADC.c mTimer.c mUART.c
+SOURCEFILES=main.c leds.c DIO.c buttons.c output_devices.c mkeypad.c mLCD.c mlcd4.c mINT.c mADC.c mTimer.c mUART.c mSPI.c
 
 
 
@@ -166,6 +166,12 @@ ${OBJECTDIR}/mUART.o: mUART.c  .generated_files/flags/default/71077b1d8118afbc93
 	@${RM} ${OBJECTDIR}/mUART.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mUART.o.d" -MT "${OBJECTDIR}/mUART.o.d" -MT ${OBJECTDIR}/mUART.o -o ${OBJECTDIR}/mUART.o mUART.c 
 	
+${OBJECTDIR}/mSPI.o: mSPI.c  .generated_files/flags/default/ca15aba41d911d05bce4b1a5352d30ccfc8b52ac .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mSPI.o.d 
+	@${RM} ${OBJECTDIR}/mSPI.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mSPI.o.d" -MT "${OBJECTDIR}/mSPI.o.d" -MT ${OBJECTDIR}/mSPI.o -o ${OBJECTDIR}/mSPI.o mSPI.c 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/69a3054bcb2b07983865e49f9810088d9fdbe8e .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
 	@${MKDIR} "${OBJECTDIR}" 
@@ -238,6 +244,12 @@ ${OBJECTDIR}/mUART.o: mUART.c  .generated_files/flags/default/ecdbcb34732b94863d
 	@${RM} ${OBJECTDIR}/mUART.o.d 
 	@${RM} ${OBJECTDIR}/mUART.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mUART.o.d" -MT "${OBJECTDIR}/mUART.o.d" -MT ${OBJECTDIR}/mUART.o -o ${OBJECTDIR}/mUART.o mUART.c 
+	
+${OBJECTDIR}/mSPI.o: mSPI.c  .generated_files/flags/default/3d5a161119c60755dc27531cbb21b7dd6c9e4c01 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mSPI.o.d 
+	@${RM} ${OBJECTDIR}/mSPI.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mSPI.o.d" -MT "${OBJECTDIR}/mSPI.o.d" -MT ${OBJECTDIR}/mSPI.o -o ${OBJECTDIR}/mSPI.o mSPI.c 
 	
 endif
 

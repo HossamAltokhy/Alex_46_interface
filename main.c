@@ -22,60 +22,90 @@
 #include "mADC.h"
 #include "mTimer.h"
 #include "mUART.h"
+#include "mSPI.h"
 
-#define SPI_MASTER     1
-#define SPI_SLAVE      0
+#define MyAddress     0x07
+// SLA address   // 0000101
+#define SLA_W         0x0A
 
-#define SPI_CLOCK_4    0
-#define SPI_CLOCK_16   1
-#define SPI_CLOCK_64   2
-#define SPI_CLOCK_128  3
+#define SLA_R         0x0B
 
-#define MOSI    PB5
-#define MISO    PB6
-#define SCK     PB7
-#define SS      PB4
+#define ERROR    -1
 
+void init_TWI(char TWI_Address, char TWI_CLOCK);
+void TWI_M_Transmit(char SLA, char data);
+char TWI_M_Receive(char SLA);
 
+void TWI_M_Transmit_buf(char SLA, char* pData);
+char* TWI_M_Receive_buf(char SLA);
 
-void init_SPI(int mode, int SPI_clock);
-void SPI_send(char data);
-char SPI_receive();
-char x = 0x01;
+void TWI_S_Transmit(char data);
+char TWI_S_Receive();
+char* TWI_S_Receieve_buf();
+
 int main(void) {
     /* Replace with your application code */
-   
-    init_SPI(SPI_MASTER, SPI_CLOCK_128);
-    
 
-    
+
+    init_TWI(MyAddress, 0);
+    _delay_ms(500);
     while (1) {
-        SPI_send(x++);
+        TWI_M_Transmit(SLA_W,2);
         _delay_ms(1000);
     }
 }
 
-
-void init_SPI(int mode, int SPI_clock){
-    SPCR |= (mode<<MSTR);
-    
-    if(mode){
-        setPORTB_DIR_VAL((1<<MOSI)|(1<<SCK)|(1<<SS), OUT);
-    }
-    else{
-        setPORTB_DIR_VAL((1<<MISO), OUT);
-    }
-    SPCR |= SPI_clock;
-    
-    SPCR |= (1<<SPE);
+void init_TWI(char TWI_Address, char TWI_CLOCK) {
+    TWAR = TWI_Address;
+    TWBR = 18; // To generate 100KHz while TWPS bits are Zeros.
 }
 
-void SPI_send(char data){
-    SPDR = data;
-    while(!(SPSR & (1<<SPIF)));
+void TWI_M_Transmit(char SLA, char data) {
+    char statusCode = 0;
+    // Start Condition 
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x08 ) {
+        return ERROR;
+    }
+
+    TWDR = SLA;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x18 && statusCode != 0x20) {
+        return ERROR;
+    } 
+    
+    TWDR = data;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x28 && statusCode != 0x30) {
+        return ERROR;
+    }
+    
+    TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
+    
+    
 }
 
-char SPI_receive(){
-    while(!(SPSR & (1<<SPIF)));
-    return SPDR;
+char TWI_S_Receive(){
+    char statusCode = 0;
+    // Ready to receive my Address.
+    TWCR = (1<<TWINT)|(1<<TWEA)|(1<<TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if(statusCode != 0x60 && statusCode != 0x70){
+        return ERROR;
+    }
+    // Ready to receive Data.
+    TWCR = (1<<TWINT)|(1<<TWEA)|(1<<TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if(statusCode != 0x80 && statusCode != 0x90){
+        return ERROR;
+    }
+    return TWDR;
 }
