@@ -36,47 +36,27 @@ void init_TWI(char TWI_Address, char TWI_CLOCK);
 void TWI_M_Transmit(char SLA, char data);
 char TWI_M_Receive(char SLA);
 
-void TWI_M_Transmit_buf(char SLA, char* pData);
-char* TWI_M_Receive_buf(char SLA);
+void TWI_M_Transmit_buf(char SLA, char* pData, char array_sz);
+char* TWI_M_Receive_buf(char SLA, char array_sz);
 
 void TWI_S_Transmit(char data);
 char TWI_S_Receive();
 char* TWI_S_Receieve_buf();
 
-
-char Data[16];
-char receivedData[16];
-
-/// 
-
+char Data[5]= {2,3,4,5,6};
 int main(void) {
     /* Replace with your application code */
 
-    init_LCD4();
+    init_TWI(MyAddress, 18);
+
     setPORTA_DIR_VAL(0xFF, OUT);
-    init_SPI(SPI_MASTER, SPI_CLOCK_128);
-    _delay_ms(50);
-    EEPROM_DISABLE();
-    _delay_ms(100);
-
-
-
+    _delay_ms(200);
+    TWI_M_Transmit_buf(SLA_W, Data, 5);
     while (1) {
 
-        Data[0] = 'A';
-        Data[1] = 'B';
-        Data[2] = 'C';
-
+        
 
         _delay_ms(200);
-        EEPROM_SPI_WRITE_ENABLE();
-
-        _delay_ms(200);
-
-        EEPROM_SPI_WRITE_ARRAY(0x07, Data, 3);
-        _delay_ms(50);
-        EEPROM_SPI_READ_ARRAY(0x07, receivedData, 3);
-        LCD4_data_str(receivedData);
     }
 }
 
@@ -116,6 +96,41 @@ void TWI_M_Transmit(char SLA, char data) {
 
 }
 
+void TWI_M_Transmit_buf(char SLA, char* pData, char array_sz) {
+    char statusCode = 0;
+    // Start Condition 
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x08) {
+        return ERROR;
+    }
+
+    TWDR = SLA;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x18 && statusCode != 0x20) {
+        return ERROR;
+    }
+
+    for (int i=0; i < array_sz; i++) {
+        TWDR = *(pData+i);
+        TWCR = (1 << TWINT) | (1 << TWEN);
+        while (!(TWCR & (1 << TWINT)));
+        statusCode = TWSR & 0xF8;
+        if (statusCode != 0x28) {
+            return ERROR;
+        }
+    }
+
+
+
+    TWCR = (1<<TWINT)|(1<<TWSTO)|(1<<TWEN);
+
+
+}
+
 char TWI_S_Receive() {
     char statusCode = 0;
     // Ready to receive my Address.
@@ -133,4 +148,81 @@ char TWI_S_Receive() {
         return ERROR;
     }
     return TWDR;
+}
+
+char TWI_M_Receive(char SLA) {
+    char data = 0;
+    char statusCode = 0;
+    // Start Condition 
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x08) {
+        return ERROR;
+    }
+    // SLA + R 
+    TWDR = SLA;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x40) {
+        return ERROR;
+    }
+    // Get ACK ready 
+    TWCR = (1 << TWINT) | (1 << TWEA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x50) {
+        return ERROR;
+    }
+    data = TWDR;
+    TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
+
+    return data;
+}
+
+void TWI_S_Transmit(char data) {
+    char statusCode = 0;
+    // Ready to receive my Address.
+    TWCR = (1 << TWINT) | (1 << TWEA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0xA8) {
+        return ERROR;
+    }
+
+    // SLAVE transmits data
+    TWDR = data;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0xB8) {
+        return ERROR;
+    }
+
+}
+
+void TWI_S_Receive_buf(char *pData, char array_sz) {
+    char statusCode = 0;
+    // Ready to receive my Address.
+    TWCR = (1 << TWINT) | (1 << TWEA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x60 && statusCode != 0x70) {
+        return ERROR;
+    }
+
+    for (int i = 0; i < array_sz; i++) {
+        // Ready to receive Data.
+        TWCR = (1 << TWINT) | (1 << TWEA) | (1 << TWEN);
+        while (!(TWCR & (1 << TWINT)));
+        statusCode = TWSR & 0xF8;
+        if (statusCode != 0x80 && statusCode != 0x90) {
+            return ERROR;
+        }
+        *(pData + i) = TWDR;
+    }
+
+
+
 }
