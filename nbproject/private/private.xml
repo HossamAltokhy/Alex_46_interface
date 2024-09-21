@@ -7,7 +7,6 @@
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/leds.h</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/main.c</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/leds.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mlcd4.c</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mlcd4.h</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mADC.c</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mADC.h</file>
@@ -18,8 +17,6 @@
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mUART.c</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mUART.h</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/DIO.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mSPI.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mSPI.h</file>
         </group>
     </open-files>
 </project-private>

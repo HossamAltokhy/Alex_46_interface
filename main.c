@@ -32,6 +32,9 @@
 
 #define ERROR    -1
 
+#define EEPROM_ADDRESS_R    0xA1   // 10100001
+#define EEPROM_ADDRESS_W    0xA0   // 10100000
+
 void init_TWI(char TWI_Address, char TWI_CLOCK);
 void TWI_M_Transmit(char SLA, char data);
 char TWI_M_Receive(char SLA);
@@ -43,21 +46,127 @@ void TWI_S_Transmit(char data);
 char TWI_S_Receive();
 char* TWI_S_Receieve_buf();
 
-char Data[5]= {2,3,4,5,6};
+
+
+void EEPROM_TWI_WRITE(int address, char data);
+char EEPROM_TWI_READ(int address);
+
+
+
+char Data[5] = {2, 3, 4, 5, 6};
+
 int main(void) {
     /* Replace with your application code */
 
+    init_LCD4();
     init_TWI(MyAddress, 18);
 
     setPORTA_DIR_VAL(0xFF, OUT);
     _delay_ms(200);
-    TWI_M_Transmit_buf(SLA_W, Data, 5);
+    EEPROM_TWI_WRITE(0x05, 9);
+
+    _delay_ms(2000);
+    char data = EEPROM_TWI_READ(0x05);
+    _delay_ms(500);
+    LCD4_data_num(data);
+
+    _delay_ms(200);
     while (1) {
 
-        
 
-        _delay_ms(200);
     }
+}
+
+void EEPROM_TWI_WRITE(int address, char data) {
+    char statusCode = 0;
+    // Start Condition
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x08) {
+        return ERROR;
+    }
+    // EEPROM Address
+    TWDR = EEPROM_ADDRESS_W; // 1010000
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x18) {
+        return ERROR;
+    }
+    // MEMORY LOCATION ADDRESS 16 bits
+    TWDR = address;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x28) {
+        return ERROR;
+    }
+    // DATA
+    TWDR = data;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x28) {
+        return ERROR;
+    }
+    // STOP Condition
+    TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
+}
+
+char EEPROM_TWI_READ(int address) {
+    char statusCode = 0;
+    // Start Condition
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x08) {
+        return ERROR;
+    }
+    // EEPROM Address
+    TWDR = EEPROM_ADDRESS_W; // 1010000
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x18) {
+        return ERROR;
+    }
+    // MEMORY LOCATION ADDRESS 16 bits
+    TWDR = address;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x28) {
+        return ERROR;
+    }
+    // Repeated Address
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x10) {
+        return ERROR;
+    }
+    // EEPROM Address
+    TWDR = EEPROM_ADDRESS_R; // 1010000
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x40) {
+        return ERROR;
+    }
+
+    TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWEA);
+    while (!(TWCR & (1 << TWINT)));
+    statusCode = TWSR & 0xF8;
+    if (statusCode != 0x50) {
+        return 7;
+    }
+    char data = TWDR;
+
+    TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
+
+    return data;
+
 }
 
 void init_TWI(char TWI_Address, char TWI_CLOCK) {
@@ -114,8 +223,8 @@ void TWI_M_Transmit_buf(char SLA, char* pData, char array_sz) {
         return ERROR;
     }
 
-    for (int i=0; i < array_sz; i++) {
-        TWDR = *(pData+i);
+    for (int i = 0; i < array_sz; i++) {
+        TWDR = *(pData + i);
         TWCR = (1 << TWINT) | (1 << TWEN);
         while (!(TWCR & (1 << TWINT)));
         statusCode = TWSR & 0xF8;
@@ -126,7 +235,7 @@ void TWI_M_Transmit_buf(char SLA, char* pData, char array_sz) {
 
 
 
-    TWCR = (1<<TWINT)|(1<<TWSTO)|(1<<TWEN);
+    TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
 
 
 }
