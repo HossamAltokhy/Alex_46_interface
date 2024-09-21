@@ -18,6 +18,9 @@
       <itemPath>mSPI.h</itemPath>
       <itemPath>EEPROM_SPI.h</itemPath>
       <itemPath>mTWI.h</itemPath>
+      <itemPath>EEPROM_TWI.h</itemPath>
+      <itemPath>EEPROM_INTERFACE.h</itemPath>
+      <itemPath>_7SEGMENT.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -42,13 +45,14 @@
       <itemPath>EEPROM_SPI.c</itemPath>
       <itemPath>mTWI.c</itemPath>
       <itemPath>EEPROM_TWI.c</itemPath>
+      <itemPath>EEPROM_INTERFACE.c</itemPath>
+      <itemPath>_7SEGMENT.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>EEPROM_TWI.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>

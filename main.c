@@ -25,29 +25,32 @@
 #include "mSPI.h"
 
 
-#define MyAddress     0x07
 
 
-
-char Data[5] = {2, 3, 4, 5, 6};
+void init_7SEG();
 
 int main(void) {
     /* Replace with your application code */
 
-    init_LCD4();
-    init_TWI(MyAddress, 18);
+    // 0x0000  // 0000000000 //0 
+    // 0x03FF  // 1111111111 //1023 
 
-    setPORTA_DIR_VAL(0xFF, OUT);
-    _delay_ms(200);
-    EEPROM_TWI_WRITE(0x05, 9);
+    //EEPROM_WRITE(0x0007, 0x05);
 
-    _delay_ms(2000);
-    char data = EEPROM_TWI_READ(0x05);
-    _delay_ms(500);
-    LCD4_data_num(data);
-
-    _delay_ms(200);
+    init_7SEG();
+    //    char display = EEPROM_READ(0x0007);
+    int x =0;
+    int counter = 0;
     while (1) {
+
+
+        set_7SEG(x);
+        counter++;
+        
+        if(counter == 200){
+            counter = 0;
+            x++;
+        }
 
 
     }
