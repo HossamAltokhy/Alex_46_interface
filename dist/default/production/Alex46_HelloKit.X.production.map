@@ -66,14 +66,8 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 build/default/production/DIO.o
  .text.setPINA_DIR
                 0x0000000000000000       0x44 build/default/production/DIO.o
- .text.setPINB_DIR
-                0x0000000000000000       0x44 build/default/production/DIO.o
  .text.setPINC_DIR
                 0x0000000000000000       0x44 build/default/production/DIO.o
- .text.setPIND_DIR
-                0x0000000000000000       0x44 build/default/production/DIO.o
- .text.setPORTA_DIR_VAL
-                0x0000000000000000       0x20 build/default/production/DIO.o
  .text.setPORTB_DIR_VAL
                 0x0000000000000000       0x20 build/default/production/DIO.o
  .text.setPORTC_DIR_VAL
@@ -81,7 +75,6 @@ Discarded input sections
  .text.setPORTD_DIR_VAL
                 0x0000000000000000       0x20 build/default/production/DIO.o
  .text.setPINA  0x0000000000000000       0x42 build/default/production/DIO.o
- .text.setPINB  0x0000000000000000       0x42 build/default/production/DIO.o
  .text.setPINC  0x0000000000000000       0x42 build/default/production/DIO.o
  .text.setPIND  0x0000000000000000       0x42 build/default/production/DIO.o
  .text.setPORTA_VAL
@@ -108,21 +101,9 @@ Discarded input sections
                 0x0000000000000000       0x18 build/default/production/DIO.o
  .text.readPIND
                 0x0000000000000000       0x18 build/default/production/DIO.o
- .debug_info    0x0000000000000000      0x726 build/default/production/DIO.o
- .debug_abbrev  0x0000000000000000       0xd2 build/default/production/DIO.o
- .debug_loc     0x0000000000000000      0x5e8 build/default/production/DIO.o
- .debug_aranges
-                0x0000000000000000       0xd8 build/default/production/DIO.o
- .debug_ranges  0x0000000000000000       0xc8 build/default/production/DIO.o
- .debug_line    0x0000000000000000      0x38d build/default/production/DIO.o
- .debug_str     0x0000000000000000       0x1b build/default/production/DIO.o
- .comment       0x0000000000000000       0x30 build/default/production/DIO.o
- .debug_frame   0x0000000000000000      0x194 build/default/production/DIO.o
  .text          0x0000000000000000        0x0 build/default/production/buttons.o
  .data          0x0000000000000000        0x0 build/default/production/buttons.o
  .bss           0x0000000000000000        0x0 build/default/production/buttons.o
- .text.initBTNs
-                0x0000000000000000       0x26 build/default/production/buttons.o
  .text.isPressedA
                 0x0000000000000000        0x8 build/default/production/buttons.o
  .text.isPressedB
@@ -131,16 +112,6 @@ Discarded input sections
                 0x0000000000000000        0x8 build/default/production/buttons.o
  .text.isPressedD
                 0x0000000000000000        0x8 build/default/production/buttons.o
- .debug_info    0x0000000000000000      0x3d0 build/default/production/buttons.o
- .debug_abbrev  0x0000000000000000       0xa5 build/default/production/buttons.o
- .debug_loc     0x0000000000000000       0x84 build/default/production/buttons.o
- .debug_aranges
-                0x0000000000000000       0x40 build/default/production/buttons.o
- .debug_ranges  0x0000000000000000       0x30 build/default/production/buttons.o
- .debug_line    0x0000000000000000       0xc0 build/default/production/buttons.o
- .debug_str     0x0000000000000000       0x43 build/default/production/buttons.o
- .comment       0x0000000000000000       0x30 build/default/production/buttons.o
- .debug_frame   0x0000000000000000       0x64 build/default/production/buttons.o
  .text          0x0000000000000000        0x0 build/default/production/output_devices.o
  .data          0x0000000000000000        0x0 build/default/production/output_devices.o
  .bss           0x0000000000000000        0x0 build/default/production/output_devices.o
@@ -210,11 +181,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/mlcd4.o
  .data          0x0000000000000000        0x0 build/default/production/mlcd4.o
  .bss           0x0000000000000000        0x0 build/default/production/mlcd4.o
- .text.LCD4_EN  0x0000000000000000       0x12 build/default/production/mlcd4.o
- .text.LCD4_cmd
-                0x0000000000000000       0x42 build/default/production/mlcd4.o
- .text.init_LCD4
-                0x0000000000000000       0x68 build/default/production/mlcd4.o
  .text.LCD4_data
                 0x0000000000000000       0x42 build/default/production/mlcd4.o
  .text.LCD4_data_str
@@ -229,16 +195,6 @@ Discarded input sections
                 0x0000000000000000       0x2e build/default/production/mlcd4.o
  .text.LCD4_GOTO
                 0x0000000000000000       0x12 build/default/production/mlcd4.o
- .debug_info    0x0000000000000000      0x873 build/default/production/mlcd4.o
- .debug_abbrev  0x0000000000000000      0x1df build/default/production/mlcd4.o
- .debug_loc     0x0000000000000000      0x396 build/default/production/mlcd4.o
- .debug_aranges
-                0x0000000000000000       0x68 build/default/production/mlcd4.o
- .debug_ranges  0x0000000000000000       0x58 build/default/production/mlcd4.o
- .debug_line    0x0000000000000000      0x2c4 build/default/production/mlcd4.o
- .debug_str     0x0000000000000000       0x2b build/default/production/mlcd4.o
- .comment       0x0000000000000000       0x30 build/default/production/mlcd4.o
- .debug_frame   0x0000000000000000      0x108 build/default/production/mlcd4.o
  .text          0x0000000000000000        0x0 build/default/production/mINT.o
  .data          0x0000000000000000        0x0 build/default/production/mINT.o
  .bss           0x0000000000000000        0x0 build/default/production/mINT.o
@@ -316,16 +272,6 @@ Discarded input sections
                 0x0000000000000000        0xe build/default/production/mTimer.o
  .text.Timer0_OC0_select_mode
                 0x0000000000000000       0x1a build/default/production/mTimer.o
- .debug_info    0x0000000000000000      0x3dc build/default/production/mTimer.o
- .debug_abbrev  0x0000000000000000       0xd5 build/default/production/mTimer.o
- .debug_loc     0x0000000000000000      0x100 build/default/production/mTimer.o
- .debug_aranges
-                0x0000000000000000       0x50 build/default/production/mTimer.o
- .debug_ranges  0x0000000000000000       0x40 build/default/production/mTimer.o
- .debug_line    0x0000000000000000      0x17a build/default/production/mTimer.o
- .debug_str     0x0000000000000000       0x23 build/default/production/mTimer.o
- .comment       0x0000000000000000       0x30 build/default/production/mTimer.o
- .debug_frame   0x0000000000000000       0x8c build/default/production/mTimer.o
  .text          0x0000000000000000        0x0 build/default/production/mUART.o
  .data          0x0000000000000000        0x0 build/default/production/mUART.o
  .bss           0x0000000000000000        0x0 build/default/production/mUART.o
@@ -457,6 +403,28 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/_7SEGMENT.o
  .data          0x0000000000000000        0x0 build/default/production/_7SEGMENT.o
  .bss           0x0000000000000000        0x0 build/default/production/_7SEGMENT.o
+ .text.init_7SEG
+                0x0000000000000000        0xe build/default/production/_7SEGMENT.o
+ .text._7SEG_EN1
+                0x0000000000000000        0x6 build/default/production/_7SEGMENT.o
+ .text._7SEG_EN2
+                0x0000000000000000        0x6 build/default/production/_7SEGMENT.o
+ .text.set_7SEG_1
+                0x0000000000000000       0x20 build/default/production/_7SEGMENT.o
+ .text.set_7SEG_2
+                0x0000000000000000       0x20 build/default/production/_7SEGMENT.o
+ .text.set_7SEG
+                0x0000000000000000       0x44 build/default/production/_7SEGMENT.o
+ .debug_info    0x0000000000000000      0x425 build/default/production/_7SEGMENT.o
+ .debug_abbrev  0x0000000000000000      0x11c build/default/production/_7SEGMENT.o
+ .debug_loc     0x0000000000000000      0x109 build/default/production/_7SEGMENT.o
+ .debug_aranges
+                0x0000000000000000       0x48 build/default/production/_7SEGMENT.o
+ .debug_ranges  0x0000000000000000       0x38 build/default/production/_7SEGMENT.o
+ .debug_line    0x0000000000000000      0x18b build/default/production/_7SEGMENT.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/_7SEGMENT.o
+ .comment       0x0000000000000000       0x30 build/default/production/_7SEGMENT.o
+ .debug_frame   0x0000000000000000       0x8c build/default/production/_7SEGMENT.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
@@ -912,7 +880,10 @@ END GROUP
  *(.comment)
  .comment       0x0000000000000000       0x2f build/default/production/main.o
                                          0x30 (size before relaxing)
- .comment       0x000000000000002f       0x30 build/default/production/_7SEGMENT.o
+ .comment       0x000000000000002f       0x30 build/default/production/DIO.o
+ .comment       0x000000000000002f       0x30 build/default/production/buttons.o
+ .comment       0x000000000000002f       0x30 build/default/production/mlcd4.o
+ .comment       0x000000000000002f       0x30 build/default/production/mTimer.o
 
 .stack.descriptors.hdr
                 0x0000000000000000        0xe
@@ -934,49 +905,73 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0x68
+.debug_aranges  0x0000000000000000      0x228
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x20 build/default/production/main.o
  .debug_aranges
-                0x0000000000000020       0x48 build/default/production/_7SEGMENT.o
+                0x0000000000000020       0xd8 build/default/production/DIO.o
+ .debug_aranges
+                0x00000000000000f8       0x40 build/default/production/buttons.o
+ .debug_aranges
+                0x0000000000000138       0x68 build/default/production/mlcd4.o
+ .debug_aranges
+                0x00000000000001a0       0x88 build/default/production/mTimer.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xbc7
+.debug_info     0x0000000000000000     0x219c
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x2bc build/default/production/main.o
- .debug_info    0x00000000000007a2      0x425 build/default/production/_7SEGMENT.o
+ .debug_info    0x00000000000004e6      0x3b6 build/default/production/main.o
+ .debug_info    0x000000000000089c      0x726 build/default/production/DIO.o
+ .debug_info    0x0000000000000fc2      0x3d0 build/default/production/buttons.o
+ .debug_info    0x0000000000001392      0x873 build/default/production/mlcd4.o
+ .debug_info    0x0000000000001c05      0x597 build/default/production/mTimer.o
 
-.debug_abbrev   0x0000000000000000      0x670
+.debug_abbrev   0x0000000000000000      0x9b9
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3       0xb1 build/default/production/main.o
- .debug_abbrev  0x0000000000000554      0x11c build/default/production/_7SEGMENT.o
+ .debug_abbrev  0x00000000000004a3       0xeb build/default/production/main.o
+ .debug_abbrev  0x000000000000058e       0xd2 build/default/production/DIO.o
+ .debug_abbrev  0x0000000000000660       0xa5 build/default/production/buttons.o
+ .debug_abbrev  0x0000000000000705      0x1df build/default/production/mlcd4.o
+ .debug_abbrev  0x00000000000008e4       0xd5 build/default/production/mTimer.o
 
-.debug_line     0x0000000000000000      0x30e
+.debug_line     0x0000000000000000      0xbed
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119       0x6a build/default/production/main.o
- .debug_line    0x0000000000000183      0x18b build/default/production/_7SEGMENT.o
+ .debug_line    0x0000000000000119      0x136 build/default/production/main.o
+ .debug_line    0x000000000000024f      0x38d build/default/production/DIO.o
+ .debug_line    0x00000000000005dc       0xc0 build/default/production/buttons.o
+ .debug_line    0x000000000000069c      0x2c4 build/default/production/mlcd4.o
+ .debug_line    0x0000000000000960      0x28d build/default/production/mTimer.o
 
-.debug_frame    0x0000000000000000       0xb0
+.debug_frame    0x0000000000000000      0x428
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x24 build/default/production/main.o
- .debug_frame   0x0000000000000024       0x8c build/default/production/_7SEGMENT.o
+ .debug_frame   0x0000000000000024      0x194 build/default/production/DIO.o
+ .debug_frame   0x00000000000001b8       0x64 build/default/production/buttons.o
+ .debug_frame   0x000000000000021c      0x108 build/default/production/mlcd4.o
+ .debug_frame   0x0000000000000324      0x104 build/default/production/mTimer.o
 
-.debug_str      0x0000000000000000      0x1a9
+.debug_str      0x0000000000000000      0x294
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196       0x13 build/default/production/main.o
- .debug_str     0x00000000000001a9        0x0 build/default/production/_7SEGMENT.o
+ .debug_str     0x0000000000000196       0x46 build/default/production/main.o
+ .debug_str     0x00000000000001dc       0x1b build/default/production/DIO.o
+ .debug_str     0x00000000000001f7       0x43 build/default/production/buttons.o
+ .debug_str     0x000000000000023a       0x2b build/default/production/mlcd4.o
+ .debug_str     0x0000000000000265       0x2f build/default/production/mTimer.o
 
-.debug_loc      0x0000000000000000      0x169
+.debug_loc      0x0000000000000000      0xc92
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0x60 build/default/production/main.o
- .debug_loc     0x0000000000000060      0x109 build/default/production/_7SEGMENT.o
+ .debug_loc     0x0000000000000000       0x90 build/default/production/main.o
+ .debug_loc     0x0000000000000090      0x5e8 build/default/production/DIO.o
+ .debug_loc     0x0000000000000678       0x84 build/default/production/buttons.o
+ .debug_loc     0x00000000000006fc      0x396 build/default/production/mlcd4.o
+ .debug_loc     0x0000000000000a92      0x200 build/default/production/mTimer.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -996,10 +991,13 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0x60
+.debug_ranges   0x0000000000000000      0x1d8
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x28 build/default/production/main.o
- .debug_ranges  0x0000000000000028       0x38 build/default/production/_7SEGMENT.o
+ .debug_ranges  0x0000000000000000       0x10 build/default/production/main.o
+ .debug_ranges  0x0000000000000010       0xc8 build/default/production/DIO.o
+ .debug_ranges  0x00000000000000d8       0x30 build/default/production/buttons.o
+ .debug_ranges  0x0000000000000108       0x58 build/default/production/mlcd4.o
+ .debug_ranges  0x0000000000000160       0x78 build/default/production/mTimer.o
 
 .debug_macro
  *(.debug_macro)
@@ -1012,65 +1010,114 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
 
-.text.set_7SEG  0x000000000000006c       0x44
- .text.set_7SEG
-                0x000000000000006c       0x44 build/default/production/_7SEGMENT.o
-                0x000000000000006c                set_7SEG
+.text.init_LCD4
+                0x000000000000006c       0x68
+ .text.init_LCD4
+                0x000000000000006c       0x68 build/default/production/mlcd4.o
+                0x000000000000006c                init_LCD4
 
-.text.main      0x00000000000000b0       0x2c
- .text.main     0x00000000000000b0       0x2c build/default/production/main.o
-                0x00000000000000b0                main
+.text.main      0x00000000000000d4       0x62
+ .text.main     0x00000000000000d4       0x62 build/default/production/main.o
+                0x00000000000000d4                main
 
-.text.set_7SEG_1
-                0x00000000000000dc       0x20
- .text.set_7SEG_1
-                0x00000000000000dc       0x20 build/default/production/_7SEGMENT.o
-                0x00000000000000dc                set_7SEG_1
+.text.Timer2_selectMode
+                0x0000000000000136       0x56
+ .text.Timer2_selectMode
+                0x0000000000000136       0x56 build/default/production/mTimer.o
+                0x0000000000000136                Timer2_selectMode
 
-.text.set_7SEG_2
-                0x00000000000000fc       0x20
- .text.set_7SEG_2
-                0x00000000000000fc       0x20 build/default/production/_7SEGMENT.o
-                0x00000000000000fc                set_7SEG_2
+.text.setPINB_DIR
+                0x000000000000018c       0x44
+ .text.setPINB_DIR
+                0x000000000000018c       0x44 build/default/production/DIO.o
+                0x000000000000018c                setPINB_DIR
 
-.text.init_7SEG
-                0x000000000000011c        0xe
- .text.init_7SEG
-                0x000000000000011c        0xe build/default/production/_7SEGMENT.o
-                0x000000000000011c                init_7SEG
+.text.setPIND_DIR
+                0x00000000000001d0       0x44
+ .text.setPIND_DIR
+                0x00000000000001d0       0x44 build/default/production/DIO.o
+                0x00000000000001d0                setPIND_DIR
 
-.text._7SEG_EN1
-                0x000000000000012a        0x6
- .text._7SEG_EN1
-                0x000000000000012a        0x6 build/default/production/_7SEGMENT.o
-                0x000000000000012a                _7SEG_EN1
+.text.setPINB   0x0000000000000214       0x42
+ .text.setPINB  0x0000000000000214       0x42 build/default/production/DIO.o
+                0x0000000000000214                setPINB
 
-.text._7SEG_EN2
-                0x0000000000000130        0x6
- .text._7SEG_EN2
-                0x0000000000000130        0x6 build/default/production/_7SEGMENT.o
-                0x0000000000000130                _7SEG_EN2
+.text.LCD4_cmd  0x0000000000000256       0x42
+ .text.LCD4_cmd
+                0x0000000000000256       0x42 build/default/production/mlcd4.o
+                0x0000000000000256                LCD4_cmd
 
-.text           0x0000000000000136        0x4
- .text          0x0000000000000136        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
-                0x0000000000000136                __vector_1
-                0x0000000000000136                __vector_12
-                0x0000000000000136                __bad_interrupt
-                0x0000000000000136                __vector_6
-                0x0000000000000136                __vector_3
-                0x0000000000000136                __vector_11
-                0x0000000000000136                __vector_13
-                0x0000000000000136                __vector_17
-                0x0000000000000136                __vector_19
-                0x0000000000000136                __vector_7
-                0x0000000000000136                __vector_5
-                0x0000000000000136                __vector_4
-                0x0000000000000136                __vector_9
-                0x0000000000000136                __vector_2
-                0x0000000000000136                __vector_15
-                0x0000000000000136                __vector_8
-                0x0000000000000136                __vector_14
-                0x0000000000000136                __vector_10
-                0x0000000000000136                __vector_16
-                0x0000000000000136                __vector_18
-                0x0000000000000136                __vector_20
+.text.initBTNs  0x0000000000000298       0x26
+ .text.initBTNs
+                0x0000000000000298       0x26 build/default/production/buttons.o
+                0x0000000000000298                initBTNs
+
+.text.setPORTA_DIR_VAL
+                0x00000000000002be       0x20
+ .text.setPORTA_DIR_VAL
+                0x00000000000002be       0x20 build/default/production/DIO.o
+                0x00000000000002be                setPORTA_DIR_VAL
+
+.text.Timer2_OC2_select_mode
+                0x00000000000002de       0x1a
+ .text.Timer2_OC2_select_mode
+                0x00000000000002de       0x1a build/default/production/mTimer.o
+                0x00000000000002de                Timer2_OC2_select_mode
+
+.text.LCD4_EN   0x00000000000002f8       0x12
+ .text.LCD4_EN  0x00000000000002f8       0x12 build/default/production/mlcd4.o
+                0x00000000000002f8                LCD4_EN
+
+.text.init_Timer2
+                0x000000000000030a       0x12
+ .text.init_Timer2
+                0x000000000000030a       0x12 build/default/production/mTimer.o
+                0x000000000000030a                init_Timer2
+
+.text.Timer2_selectCLK
+                0x000000000000031c        0xe
+ .text.Timer2_selectCLK
+                0x000000000000031c        0xe build/default/production/mTimer.o
+                0x000000000000031c                Timer2_selectCLK
+
+.text.Timer2_OC2_init
+                0x000000000000032a        0xe
+ .text.Timer2_OC2_init
+                0x000000000000032a        0xe build/default/production/mTimer.o
+                0x000000000000032a                Timer2_OC2_init
+
+.text.Timer2_TOV_INT_Enable
+                0x0000000000000338        0x8
+ .text.Timer2_TOV_INT_Enable
+                0x0000000000000338        0x8 build/default/production/mTimer.o
+                0x0000000000000338                Timer2_TOV_INT_Enable
+
+.text.Timer2_COMP_INT_Enable
+                0x0000000000000340        0x8
+ .text.Timer2_COMP_INT_Enable
+                0x0000000000000340        0x8 build/default/production/mTimer.o
+                0x0000000000000340                Timer2_COMP_INT_Enable
+
+.text           0x0000000000000348        0x4
+ .text          0x0000000000000348        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
+                0x0000000000000348                __vector_1
+                0x0000000000000348                __vector_12
+                0x0000000000000348                __bad_interrupt
+                0x0000000000000348                __vector_6
+                0x0000000000000348                __vector_3
+                0x0000000000000348                __vector_11
+                0x0000000000000348                __vector_13
+                0x0000000000000348                __vector_17
+                0x0000000000000348                __vector_19
+                0x0000000000000348                __vector_7
+                0x0000000000000348                __vector_5
+                0x0000000000000348                __vector_4
+                0x0000000000000348                __vector_9
+                0x0000000000000348                __vector_2
+                0x0000000000000348                __vector_15
+                0x0000000000000348                __vector_8
+                0x0000000000000348                __vector_14
+                0x0000000000000348                __vector_10
+                0x0000000000000348                __vector_16
+                0x0000000000000348                __vector_18
+                0x0000000000000348                __vector_20

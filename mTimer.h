@@ -11,6 +11,7 @@
 #include <avr/io.h>
 
 #define OC0     PB3
+#define OC2     PD7
 
 #define BTN_INC PB6
 #define BTN_DEC PB7
@@ -20,6 +21,11 @@
 #define OC0_CTC_CLEAR   2
 #define OC0_CTC_SET     3  
 
+#define OC2_Disable 0
+#define OC2_CTC_TOGGLE  1
+#define OC2_CTC_CLEAR   2
+#define OC2_CTC_SET     3  
+
 
 
 #define OC0_PWM_CLEAR_UP  2
@@ -27,6 +33,13 @@
 
 #define OC0_FPWM_CLEAR  2
 #define OC0_FPWM_SET    3
+
+
+#define OC2_PWM_CLEAR_UP  2
+#define OC2_PWM_SET_UP    3
+
+#define OC2_FPWM_CLEAR  2
+#define OC2_FPWM_SET    3
 
 #define clockSelect_Timer_OFF         0
 #define clockSelect_Clk_io            1
@@ -43,6 +56,7 @@
 #define Timer_mode_FPWM               3
 
 #define Timer0_OCR0_val              254
+#define Timer2_OCR2_val              10
 
 void init_Timer0(char Timer_mode, char clockSelect);
 void Timer0_selectMode(char Timer_mode);
@@ -51,6 +65,14 @@ void Timer0_TOV_INT_Enable();
 void Timer0_COMP_INT_Enable();
 void Timer0_OC0_init();
 void Timer0_OC0_select_mode(int OC0_mode);
+
+void init_Timer2(char Timer_mode, char clockSelect);
+void Timer2_selectMode(char Timer_mode);
+void Timer2_selectCLK(char clockSelect);
+void Timer2_TOV_INT_Enable();
+void Timer2_COMP_INT_Enable();
+void Timer2_OC2_init();
+void Timer2_OC2_select_mode(int OC2_mode);
 
 
 #endif	/* MTIMER_H */

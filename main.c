@@ -24,32 +24,35 @@
 #include "mUART.h"
 #include "mSPI.h"
 
-
-
-
-void init_7SEG();
-
 int main(void) {
-    /* Replace with your application code */
+    initBTNs();
+    Timer2_OC2_select_mode(OC2_FPWM_SET);
+    Timer2_OC2_init();
+    init_Timer2(Timer_mode_FPWM, clockSelect_Clk_io_1024);
 
-    // 0x0000  // 0000000000 //0 
-    // 0x03FF  // 1111111111 //1023 
+    init_LCD4();
 
-    //EEPROM_WRITE(0x0007, 0x05);
 
-    init_7SEG();
-    //    char display = EEPROM_READ(0x0007);
-    int x =0;
-    int counter = 0;
     while (1) {
 
+        //        if(isPressedB(BTN0)){
+        //            OCR2 += 10;
+        //            _delay_ms(100);
+        //        }
+        //        if(isPressedD(BTN2)){
+        //            OCR2 -= 10;
+        //            _delay_ms(100);
+        //        }
 
-        set_7SEG(x);
-        counter++;
-        
-        if(counter == 200){
-            counter = 0;
-            x++;
+        for (; OCR2 < 250; OCR2 += 10) {
+//            LCD4_CLEAR();
+//            LCD4_data_num(OCR2);
+            _delay_ms(20);
+        }
+        for (; OCR2 > 0; OCR2 -= 10) {
+//            LCD4_CLEAR();
+//            LCD4_data_num(OCR2);
+            _delay_ms(20);
         }
 
 

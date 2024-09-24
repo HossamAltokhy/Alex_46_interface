@@ -57,3 +57,67 @@ void Timer0_OC0_select_mode(int OC0_mode) {
     TCCR0 &= ~((1 << COM01) | (1 << COM00));
     TCCR0 |= (OC0_mode << COM00);
 }
+
+
+
+
+
+
+
+
+
+void init_Timer2(char Timer_mode, char clockSelect) {
+
+    // Selecting Timer0 Mode
+    Timer2_selectMode(Timer_mode);
+
+    // Selecting Clock 
+    Timer2_selectCLK(clockSelect);
+}
+
+void Timer2_selectMode(char Timer_mode) {
+    switch (Timer_mode) {
+        case Timer_mode_Normal:
+            TCCR2 &= ~((1 << WGM20) | (1 << WGM21));
+            Timer2_TOV_INT_Enable();
+            break;
+        case Timer_mode_CTC:
+            OCR2 = Timer2_OCR2_val;
+            TCCR2 &= ~(1 << WGM20);
+            TCCR2 |= (1 << WGM01);
+            Timer2_COMP_INT_Enable();
+            break;
+        case Timer_mode_PWM:
+            OCR2 = Timer2_OCR2_val;
+            TCCR2 &= ~(1 << WGM21);
+            TCCR2 |= (1 << WGM20);
+            break;
+        case Timer_mode_FPWM:
+            OCR2 = Timer2_OCR2_val;
+            TCCR2 |= (1 << WGM21);
+            TCCR2 |= (1 << WGM20);
+            break;
+    }
+}
+
+void Timer2_selectCLK(char clockSelect) {
+    TCCR2 &= ~((1 << CS22) | (1 << CS21) | (1 << CS20));
+    TCCR2 |= clockSelect;
+}
+
+void Timer2_TOV_INT_Enable() {
+    TIMSK |= (1 << TOIE2);
+}
+
+void Timer2_COMP_INT_Enable() {
+    TIMSK |= (1 << OCIE2);
+}
+
+void Timer2_OC2_init() {
+    setPIND_DIR(OC2, OUT);
+}
+
+void Timer2_OC2_select_mode(int OC2_mode) {
+    TCCR2 &= ~((1 << COM21) | (1 << COM20));
+    TCCR2 |= (OC2_mode << COM20);
+}
