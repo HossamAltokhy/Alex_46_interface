@@ -23,38 +23,25 @@
 #include "mTimer.h"
 #include "mUART.h"
 #include "mSPI.h"
+#include "_7SEGMENT.h"
 
 int main(void) {
-    initBTNs();
-    Timer2_OC2_select_mode(OC2_FPWM_SET);
-    Timer2_OC2_init();
-    init_Timer2(Timer_mode_FPWM, clockSelect_Clk_io_1024);
+    init_7SEG();
 
-    init_LCD4();
-
-
+    int x =0;
+    int counter =0;
     while (1) {
 
-        //        if(isPressedB(BTN0)){
-        //            OCR2 += 10;
-        //            _delay_ms(100);
-        //        }
-        //        if(isPressedD(BTN2)){
-        //            OCR2 -= 10;
-        //            _delay_ms(100);
-        //        }
-
-        for (; OCR2 < 250; OCR2 += 10) {
-//            LCD4_CLEAR();
-//            LCD4_data_num(OCR2);
-            _delay_ms(20);
+        set_7SEG(x);
+        
+        counter++;
+        if(counter == 100){
+            x++;
+            counter = 0;
         }
-        for (; OCR2 > 0; OCR2 -= 10) {
-//            LCD4_CLEAR();
-//            LCD4_data_num(OCR2);
-            _delay_ms(20);
+        if(x== 100){
+            x =0;
         }
-
 
     }
 }

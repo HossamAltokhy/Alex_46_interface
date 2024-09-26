@@ -20,7 +20,7 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h leds.h \
  DIO.h buttons.h output_devices.h mkeypad.h mLCD4.h mINT.h mADC.h \
- mTimer.h mUART.h mSPI.h
+ mTimer.h mUART.h mSPI.h _7SEGMENT.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h:
 
@@ -83,3 +83,5 @@ mTimer.h:
 mUART.h:
 
 mSPI.h:
+
+_7SEGMENT.h:
