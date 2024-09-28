@@ -2,7 +2,7 @@
 #include "mTWI.h"
 #include "EEPROM_TWI.h"
 
-void EEPROM_TWI_WRITE(int address, char data) {
+char EEPROM_TWI_WRITE(int address, char data) {
     char statusCode = 0;
     // Start Condition
     TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
@@ -37,6 +37,8 @@ void EEPROM_TWI_WRITE(int address, char data) {
     }
     // STOP Condition
     TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
+    
+    return ERROR;
 }
 
 char EEPROM_TWI_READ(int address) {

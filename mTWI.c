@@ -6,7 +6,7 @@ void init_TWI(char TWI_Address, char TWI_CLOCK) {
     TWBR = 18; // To generate 100KHz while TWPS bits are Zeros.
 }
 
-void TWI_M_Transmit(char SLA, char data) {
+char TWI_M_Transmit(char SLA, char data) {
     char statusCode = 0;
     // Start Condition 
     TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
@@ -34,10 +34,10 @@ void TWI_M_Transmit(char SLA, char data) {
 
     TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
 
-
+return ERROR;
 }
 
-void TWI_M_Transmit_buf(char SLA, char* pData, char array_sz) {
+char TWI_M_Transmit_buf(char SLA, char* pData, char array_sz) {
     char statusCode = 0;
     // Start Condition 
     TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
@@ -69,7 +69,7 @@ void TWI_M_Transmit_buf(char SLA, char* pData, char array_sz) {
 
     TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
 
-
+    return ERROR;
 }
 
 char TWI_S_Receive() {
@@ -122,7 +122,7 @@ char TWI_M_Receive(char SLA) {
     return data;
 }
 
-void TWI_S_Transmit(char data) {
+char TWI_S_Transmit(char data) {
     char statusCode = 0;
     // Ready to receive my Address.
     TWCR = (1 << TWINT) | (1 << TWEA) | (1 << TWEN);
@@ -140,10 +140,10 @@ void TWI_S_Transmit(char data) {
     if (statusCode != 0xB8) {
         return ERROR;
     }
-
+    return ERROR;
 }
 
-void TWI_S_Receive_buf(char *pData, char array_sz) {
+char TWI_S_Receive_buf(char *pData, char array_sz) {
     char statusCode = 0;
     // Ready to receive my Address.
     TWCR = (1 << TWINT) | (1 << TWEA) | (1 << TWEN);
@@ -165,5 +165,5 @@ void TWI_S_Receive_buf(char *pData, char array_sz) {
     }
 
 
-
+    return ERROR;
 }

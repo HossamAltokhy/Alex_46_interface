@@ -413,24 +413,24 @@ Discarded input sections
  .text.init_TWI
                 0x0000000000000000        0x8 build/default/production/mTWI.o
  .text.TWI_M_Transmit
-                0x0000000000000000       0x48 build/default/production/mTWI.o
+                0x0000000000000000       0x4a build/default/production/mTWI.o
  .text.TWI_M_Transmit_buf
-                0x0000000000000000       0x5a build/default/production/mTWI.o
+                0x0000000000000000       0x5c build/default/production/mTWI.o
  .text.TWI_S_Receive
                 0x0000000000000000       0x30 build/default/production/mTWI.o
  .text.TWI_M_Receive
                 0x0000000000000000       0x4c build/default/production/mTWI.o
  .text.TWI_S_Transmit
-                0x0000000000000000       0x22 build/default/production/mTWI.o
+                0x0000000000000000       0x24 build/default/production/mTWI.o
  .text.TWI_S_Receive_buf
-                0x0000000000000000       0x3c build/default/production/mTWI.o
- .debug_info    0x0000000000000000      0x468 build/default/production/mTWI.o
- .debug_abbrev  0x0000000000000000       0xfa build/default/production/mTWI.o
+                0x0000000000000000       0x3e build/default/production/mTWI.o
+ .debug_info    0x0000000000000000      0x478 build/default/production/mTWI.o
+ .debug_abbrev  0x0000000000000000       0xfc build/default/production/mTWI.o
  .debug_loc     0x0000000000000000      0x3b1 build/default/production/mTWI.o
  .debug_aranges
                 0x0000000000000000       0x50 build/default/production/mTWI.o
  .debug_ranges  0x0000000000000000       0x58 build/default/production/mTWI.o
- .debug_line    0x0000000000000000      0x34b build/default/production/mTWI.o
+ .debug_line    0x0000000000000000      0x363 build/default/production/mTWI.o
  .debug_str     0x0000000000000000       0x14 build/default/production/mTWI.o
  .comment       0x0000000000000000       0x30 build/default/production/mTWI.o
  .debug_frame   0x0000000000000000       0x84 build/default/production/mTWI.o
@@ -438,16 +438,16 @@ Discarded input sections
  .data          0x0000000000000000        0x0 build/default/production/EEPROM_TWI.o
  .bss           0x0000000000000000        0x0 build/default/production/EEPROM_TWI.o
  .text.EEPROM_TWI_WRITE
-                0x0000000000000000       0x56 build/default/production/EEPROM_TWI.o
+                0x0000000000000000       0x58 build/default/production/EEPROM_TWI.o
  .text.EEPROM_TWI_READ
                 0x0000000000000000       0x96 build/default/production/EEPROM_TWI.o
- .debug_info    0x0000000000000000      0x2d2 build/default/production/EEPROM_TWI.o
- .debug_abbrev  0x0000000000000000       0x9e build/default/production/EEPROM_TWI.o
+ .debug_info    0x0000000000000000      0x2d6 build/default/production/EEPROM_TWI.o
+ .debug_abbrev  0x0000000000000000       0xa0 build/default/production/EEPROM_TWI.o
  .debug_loc     0x0000000000000000      0x208 build/default/production/EEPROM_TWI.o
  .debug_aranges
                 0x0000000000000000       0x28 build/default/production/EEPROM_TWI.o
  .debug_ranges  0x0000000000000000       0x18 build/default/production/EEPROM_TWI.o
- .debug_line    0x0000000000000000      0x207 build/default/production/EEPROM_TWI.o
+ .debug_line    0x0000000000000000      0x20d build/default/production/EEPROM_TWI.o
  .debug_str     0x0000000000000000        0xb build/default/production/EEPROM_TWI.o
  .comment       0x0000000000000000       0x30 build/default/production/EEPROM_TWI.o
  .debug_frame   0x0000000000000000       0x34 build/default/production/EEPROM_TWI.o

@@ -19,13 +19,13 @@
 
 
 void init_TWI(char TWI_Address, char TWI_CLOCK);
-void TWI_M_Transmit(char SLA, char data);
+char TWI_M_Transmit(char SLA, char data);
 char TWI_M_Receive(char SLA);
 
-void TWI_M_Transmit_buf(char SLA, char* pData, char array_sz);
+char TWI_M_Transmit_buf(char SLA, char* pData, char array_sz);
 char* TWI_M_Receive_buf(char SLA, char array_sz);
 
-void TWI_S_Transmit(char data);
+char TWI_S_Transmit(char data);
 char TWI_S_Receive();
 char* TWI_S_Receieve_buf();
 
