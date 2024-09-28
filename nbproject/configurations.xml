@@ -21,6 +21,26 @@
       <itemPath>EEPROM_TWI.h</itemPath>
       <itemPath>EEPROM_INTERFACE.h</itemPath>
       <itemPath>_7SEGMENT.h</itemPath>
+      <itemPath>freertos/include/FreeRTOS.h</itemPath>
+      <itemPath>freertos/include/FreeRTOSConfig.h</itemPath>
+      <itemPath>freertos/include/StackMacros.h</itemPath>
+      <itemPath>freertos/include/atomic.h</itemPath>
+      <itemPath>freertos/include/croutine.h</itemPath>
+      <itemPath>freertos/include/deprecated_definitions.h</itemPath>
+      <itemPath>freertos/include/event_groups.h</itemPath>
+      <itemPath>freertos/include/list.h</itemPath>
+      <itemPath>freertos/include/message_buffer.h</itemPath>
+      <itemPath>freertos/include/mpu_prototypes.h</itemPath>
+      <itemPath>freertos/include/mpu_wrappers.h</itemPath>
+      <itemPath>freertos/include/portable.h</itemPath>
+      <itemPath>freertos/include/portmacro.h</itemPath>
+      <itemPath>freertos/include/projdefs.h</itemPath>
+      <itemPath>freertos/include/queue.h</itemPath>
+      <itemPath>freertos/include/semphr.h</itemPath>
+      <itemPath>freertos/include/stack_macros.h</itemPath>
+      <itemPath>freertos/include/stream_buffer.h</itemPath>
+      <itemPath>freertos/include/task.h</itemPath>
+      <itemPath>freertos/include/timers.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -47,6 +67,15 @@
       <itemPath>EEPROM_TWI.c</itemPath>
       <itemPath>EEPROM_INTERFACE.c</itemPath>
       <itemPath>_7SEGMENT.c</itemPath>
+      <itemPath>freertos/croutine.c</itemPath>
+      <itemPath>freertos/event_groups.c</itemPath>
+      <itemPath>freertos/heap_4.c</itemPath>
+      <itemPath>freertos/list.c</itemPath>
+      <itemPath>freertos/port.c</itemPath>
+      <itemPath>freertos/queue.c</itemPath>
+      <itemPath>freertos/stream_buffer.c</itemPath>
+      <itemPath>freertos/tasks.c</itemPath>
+      <itemPath>freertos/timers.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

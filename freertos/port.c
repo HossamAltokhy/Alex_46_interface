@@ -38,8 +38,8 @@ Changes from V2.6.0
 #include <stdlib.h>
 #include <avr/interrupt.h>
 
-#include "FreeRTOS.h"
-#include "task.h"
+#include "include/FreeRTOS.h"
+#include "include/task.h"
 
 /*-----------------------------------------------------------
  * Implementation of functions defined in portable.h for the AVR port.

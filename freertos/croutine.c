@@ -26,9 +26,9 @@
  *
  */
 
-#include "FreeRTOS.h"
-#include "task.h"
-#include "croutine.h"
+#include "include/FreeRTOS.h"
+#include "include/task.h"
+#include "include/croutine.h"
 
 /* Remove the whole file is co-routines are not being used. */
 #if ( configUSE_CO_ROUTINES != 0 )
