@@ -14,6 +14,8 @@
 void init_UART(int BaudRate);
 void UART_send(char data);
 char UART_receive();
+void UART_send_str(char * str);
+void UART_num(int num);
 
 #endif	/* MUART_H */
 

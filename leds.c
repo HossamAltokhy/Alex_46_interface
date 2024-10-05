@@ -37,3 +37,18 @@ void LED_OFF(int LED_NUM){
             break;
     }
 }
+    
+void LED_TOG(int LED_NUM){
+    switch(LED_NUM){
+        case LED0:
+            
+            PORTC ^= (1<<LED0);
+            break;
+        case LED1:
+            PORTC ^= (1<<LED1);
+            break;
+        case LED2:
+            PORTD ^= (1<<LED2);
+            break;
+    }
+}

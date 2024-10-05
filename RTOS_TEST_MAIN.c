@@ -10,13 +10,13 @@
 #include <util/delay.h>
 
 
-#include "freertos/include/FreeRTOS.h"
-#include "freertos/include/FreeRTOSConfig.h"
-#include "freertos/include/task.h"
-#include "mUART.h"
+#include "FreeRTOS/include/FreeRTOS.h"
+#include "FreeRTOS/include/FreeRTOSConfig.h"
+#include "FreeRTOS/include/task.h"
+#include "drivers/include/mUART.h"
 
-#include "freertos/include/queue.h"
-#include "mADC.h"
+#include "FreeRTOS/include/queue.h"
+#include "drivers/include/mADC.h"
 
 
 TaskHandle_t Task1Handler = NULL;

@@ -17,6 +17,7 @@
 void initLEDs(void);
 void LED_ON(int LED_NUM);
 void LED_OFF(int LED_NUM);
+void LED_TOG(int LED_NUM);
 
 #endif	/* LEDS_H */
 

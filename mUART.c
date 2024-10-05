@@ -3,27 +3,36 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include <avr/io.h>
+#include <string.h>
+#include <stdlib.h>
 
 #include "mUART.h"
 #include "DIO.h"
 
 void init_UART(int BaudRate){
-//    short temp = (F_CPU/16.0/BaudRate)-1;  // Async Mode
-    short temp = (F_CPU/2.0/BaudRate)-1;     // Sync Mode
+    short temp = (F_CPU/16.0/BaudRate)-1;  // Async Mode
     UBRRL = temp;
     UBRRH = temp>>8;
-    // Set MODE to Sync Master Mode
-    UCSRC |= (1<<URSEL)|(1<<UMSEL)|(1<<USBS);
-    // Set DDRB for XCK
-    setPINB_DIR(PB0, OUT);
-    _delay_ms(5);
+  
     // Enable Tx,Rx
-    UCSRB |= (1<<TXEN);//|(1<<RXEN);
+    UCSRB |= (1<<TXEN)|(1<<RXEN);
     
 }
 void UART_send(char data){
     while(!(UCSRA & (1<<UDRE)));
         UDR = data;   
+}
+
+void UART_num(int num){
+    char str[11];
+    itoa(num, str, 10);
+    UART_send_str(str);
+}
+
+void UART_send_str(char * str){
+    for(int i =0 ; str[i] != '\0';i++){
+        UART_send(str[i]);
+    }
 }
 
 char UART_receive(){

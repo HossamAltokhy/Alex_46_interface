@@ -3,17 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/leds.h</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/main.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/EEPROM_TWI.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mTWI.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/EEPROM_TWI.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/EEPROM_INTERFACE.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/EEPROM_INTERFACE.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/_7SEGMENT.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/_7SEGMENT.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mTimer.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mTimer.h</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/freertos/tasks.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/freertos/include/FreeRTOS.h</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/freertos/include/FreeRTOSConfig.h</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/freertos/include/task.h</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/freertos/include/portmacro.h</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/freertos/port.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mUART.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mUART.h</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/freertos/timers.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/freertos/heap_4.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mADC.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex46_HelloKit.X/mADC.h</file>
         </group>
     </open-files>
 </project-private>
